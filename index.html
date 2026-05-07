@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body{
+        background-color: #FDF6E2;
+        padding-bottom: 80px;
+    }
+    .hero{
+        background-color: #F1DDA8;
+        text-align: center;
+        border-radius: 20px;
+        padding: 30px 20px;
+        color: #6B4C1E;
+    }
+    .products{
+        background-color: #FFFDF7;
+        padding: 10px 30px;
+        margin-top: 10px;
+        border-radius: 20px;
+        color: #6B4C1E;
+        border-left: 4px solid #C8922A;
+    }
+    .products img{
+        width:200px;
+    }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+input[type="radio"] { display: none; }
+
+.page {
+  display: none;
+  padding: 40px 24px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#tab-home:checked   ~ #home    { display: block; }
+#tab-about:checked  ~ #about   { display: block; }
+#tab-contact:checked ~ #contact { display: block; }
+#tab-gallery:checked ~ #gallery { display: block; }
+
+/* Default show home */
+#tab-home:checked ~ #home,
+body:not(:has(input:checked)) #home { display: block; }
+
+.page h2 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+.page p  { color: #666; line-height: 1.6; }
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 70px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+}
+
+.bottom-nav label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: #777;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 8px 6px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.bottom-nav label svg {
+  width: 24px; height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s;
+}
+
+.bottom-nav label:hover {
+  color: #ff6b1a;
+  background: rgba(255,107,26,0.12);
+  transform: translateY(-3px);
+}
+
+/* Active label highlight */
+#tab-home:checked    ~ .bottom-nav label[for="tab-home"],
+#tab-about:checked   ~ .bottom-nav label[for="tab-about"],
+#tab-contact:checked ~ .bottom-nav label[for="tab-contact"],
+#tab-gallery:checked ~ .bottom-nav label[for="tab-gallery"],
+body:not(:has(input:checked)) label[for="tab-home"] {
+  color: #ff6b1a;
+  background: rgba(255,107,26,0.12);
+}
+
+</style>
+</head>
+<body>
+
+<!-- Radio inputs -->
+<input type="radio" name="tab" id="tab-home" checked>
+<input type="radio" name="tab" id="tab-about">
+<input type="radio" name="tab" id="tab-contact">
+<input type="radio" name="tab" id="tab-gallery">
+
+<!-- Pages -->
+<div id="home" class="page">
+  <div class="hero">
+    <h1>The Golden Purity</h1>
+    <p>Traditional Vedic ghee crafted from grass-fed desi cows. Pure, rich, and full of goodness.</p>
+  </div>
+  <div class="products">
+    <h1>🐄Grass-Fed Cows</h1>
+    <p>Sourced from free-roaming desi cows raised with care and love.</p>
+  </div>
+  <div class="products"><h1>🔥Slow-Cooked Bilona Method</h1>
+<p>Ancient Vedic process for maximum purity and nutrition.</p></div>
+<div class="products">
+    <h1>🌿Zero Additives</h1>
+    <p>No preservatives, no artificial colors — just pure golden ghee.</p>
+</div>
+<div class="products">
+    <h1>🎖️Lab Certified</h1>
+    <p>Every batch third-party tested for quality and purity.</p>
+</div>
+</div>
+
+<div id="about" class="page">
+  <div class="hero">
+    <h1>Our Story</h1>
+    <p>GoldGhee was born from a simple belief — that pure, traditional ghee has the power to nourish both body and soul. We bring generations of wisdom to every jar.</p>
+    
+  </div>
+  <div class="products">
+    <h1>🏡 From Our Farm</h1>
+    <p>Our cows graze freely on natural pastures. No hormones, no shortcuts — just honest farming rooted in tradition.</p>
+  </div>
+  <div class="products">
+    <h1>🥛 Bilona Process</h1>
+    <p>Milk is curd-set, hand-churned into butter, then slow-cooked into pure ghee — the ancient way, every time.</p>
+  </div>
+  <div class="products"><h1>📦Delivered Fresh</h1>
+<p>Packaged in airtight glass jars and shipped directly to your door, preserving every drop of goodness.</p></div>
+<div class="products">
+    <h1>💛Our Mission</h1>
+    <p>To bring authentic, nutritious ghee to every Indian kitchen without compromise on quality or purity.</p>
+</div>
+</div>
+
+<div id="contact" class="page">
+  <div class="hero">
+    <h1>Contact Us</h1>
+    <p>We are always ready to serve pure and traditional ghee to your family 💛</p>
+  </div>
+
+  <div class="products">
+    <h1>📞 Call Us</h1>
+    <p>+91 XXXXX XXXXX</p>
+  </div>
+
+  <div class="products">
+    <h1>💬 WhatsApp</h1>
+    <p>Chat with us anytime for orders and queries.</p>
+  </div>
+
+  <div class="products">
+    <h1>📍 Location</h1>
+    <p>Malda, West Bengal</p>
+  </div>
+
+  <div class="products">
+    <h1>🕒 Order Timing</h1>
+    <p>9:00 AM – 9:00 PM</p>
+  </div>
+</div>
+
+<div id="gallery" class="page">
+  <h1 style="text-align: center;color: #6B4C1E;">Our Photos of our products</h1>
+  <div class="products">
+    <img src="https://i.postimg.cc/3Jt40LMC/1778167427098(1).png">
+    <h1>🎖️Gold Ghee</h1>
+  </div>
+  <div class="products">
+    <img src="https://i.postimg.cc/vmMJRvT8/1778167427098(2).png">
+    <h1>Best Ghee in Malda</h1>
+  </div>
+  <div class="products">
+    <img src="https://i.postimg.cc/3NcZ1348/1778168757087(2).png">
+    <h1>Gold Ghee- The Taste of real ghee</h1>
+  </div>
+</div>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+
+  <label for="tab-home">
+    <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z"/><polyline points="9 21 9 12 15 12 15 21"/></svg>
+    Home
+  </label>
+
+  <label for="tab-about">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    About
+  </label>
+
+  <label for="tab-contact">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Contact
+  </label>
+
+  <label for="tab-gallery">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    Gallery
+  </label>
+
+</nav>
+
+</body>
+</html>
